@@ -23,6 +23,65 @@ File used: `data/customer_churn.csv`
 
 ---
 
-## 🧪 SQL Analysis
-All SQL queries are stored in:
-**Key Insights from SQL:**
+
+## 🗄️ SQL Analysis
+
+All SQL queries used in this project are stored in the file:  
+`sql/churn_analysis.sql`
+
+### 🔹 Key SQL Queries
+
+```sql
+SELECT
+    ROUND(SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate
+FROM customer_churn;
+```
+
+```sql
+SELECT
+    contract_type,
+    COUNT(*) AS total_customers,
+    SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate
+FROM customer_churn
+GROUP BY contract_type
+ORDER BY churn_rate DESC;
+```
+
+```sql
+SELECT
+    CASE
+        WHEN monthly_charges <= 35 THEN 'Low'
+        WHEN monthly_charges BETWEEN 35 AND 70 THEN 'Medium'
+        ELSE 'High'
+    END AS charge_category,
+    COUNT(*) AS total_customers,
+    SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) AS churned
+FROM customer_churn
+GROUP BY charge_category
+ORDER BY churned DESC;
+```
+
+```sql
+SELECT
+    CASE
+        WHEN tenure <= 12 THEN '0–1 year'
+        WHEN tenure BETWEEN 13 AND 36 THEN '1–3 years'
+        ELSE '3+ years'
+    END AS tenure_group,
+    COUNT(*) AS total_customers,
+    SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) AS churned
+FROM customer_churn
+GROUP BY tenure_group
+ORDER BY churned DESC;
+```
+
+```sql
+SELECT
+    internet_service,
+    COUNT(*) AS total_customers,
+    SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) AS churned
+FROM customer_churn
+GROUP BY internet_service
+ORDER BY churned DESC;
+```
