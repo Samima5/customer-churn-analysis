@@ -1,45 +1,96 @@
-# Customer Churn Analysis
+# Customer & Transaction Analysis
 
-This project analyzes customer churn using SQL, Python, and Power BI.  
-The goal is to identify why customers leave and provide data-driven retention strategies.
+## 📌 Project Overview
+Data Analytics Virtual Internship program focuses on solving real business problems using data.  
+In this project, I worked with customer demographics & transaction datasets and delivered insights for the marketing optimization team.
 
----
-
-## 🔍 Project Objectives
-- Analyze customer demographics and usage patterns  
-- Identify churn drivers  
-- Build predictive insights using Python  
-- Create dashboards to visualize churn trends  
-- Provide business recommendations
-
----
-
-## 📁 Tools & Technologies
-- Python (Pandas, Matplotlib, Seaborn)
-- SQL (Joins, Aggregations)
-- Power BI (Dashboards & KPIs)
+## 🎯 Objectives
+- Clean and prepare customer & transaction datasets.
+- Identify high-value customer segments.
+- Analyze purchasing behavior using KPIs.
+- Create dashboards for business stakeholders.
+- Deliver actionable insights based on data patterns.
 
 ---
 
-## 📊 Key Insights
-- High churn rate among low-tenure customers  
-- Monthly contract users churn more  
-- Customers with high monthly charges have higher churn probability  
-- Senior citizens churn rate is significantly higher  
+## 🗂️ Dataset Description
+### 1. Customer Demographic Data
+- customer_id  
+- gender  
+- age  
+- job_title  
+- wealth_segment  
+- past_3_years_bike_related_purchases  
+- tenure  
+
+### 2. Customer Address Data
+- customer_id  
+- address  
+- postcode  
+- state  
+- property_valuation  
+
+### 3. Transactions Data
+- transaction_id  
+- product_id  
+- customer_id  
+- transaction_date  
+- online_order / offline_order  
+- list_price  
+- standard_cost  
 
 ---
 
-## 📌 Final Deliverables
-- SQL analytical queries  
-- Python EDA and visualizations  
-- Cleaned dataset  
-- Power BI interactive dashboard  
-- Business recommendations for reducing churn
+## 🧹 Data Cleaning Steps
+- Removed duplicate customer records  
+- Handled missing values (gender, job title, property valuation)  
+- Converted date fields to datetime  
+- Standardized categorical fields  
+- Merged datasets using `customer_id`
 
 ---
 
-## 🧠 Business Recommendations
-- Offer discounts for long-term contracts  
-- Create loyalty programs for high-risk customers  
-- Improve customer service for senior citizens  
-- Reduce hidden charges and improve transparency  
+## 📊 Exploratory Data Analysis (EDA)
+### Key Analyses:
+- Customer distribution by age and wealth segment  
+- Revenue vs Customer Segment  
+- Online vs Offline order trends  
+- Top spending customers  
+- Top regions by total sales  
+- Product performance analysis  
+
+---
+
+## 📈 Dashboard Overview
+Created an interactive dashboard containing:
+- Total revenue  
+- Orders by product category  
+- Customer segmentation  
+- State-wise sales  
+- Monthly revenue trend  
+- High-value customer group  
+
+Dashboard created using:
+- Power BI / Tableau / Excel (choose one)
+
+---
+
+## 🧠 Insights & Recommendations
+- High-value customers belong mainly to the **Mass Affluent** and **High Net-Worth** segments  
+- Sales are strongly driven by customers aged **35–50**  
+- Online orders are increasing YoY—investment in digital strategy is recommended  
+- Targeted campaigns should focus on states with high sales performance (NSW, VIC)  
+- Premium product bundles can be offered to high-spending repeat customers  
+
+---
+
+## 📚 Tools & Technologies Used
+- Python (Pandas, NumPy, Matplotlib/Seaborn)  
+- SQL  
+- Excel  
+- Power BI / Tableau  
+- Jupyter Notebook  
+
+---
+
+## 📂 Project Structure
