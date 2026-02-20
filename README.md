@@ -111,8 +111,10 @@ plt.title('Churn by Contract Type')
 plt.xticks(rotation=45)
 plt.show()
 
-# Monthly Charges distribution
+# Monthly Charges Distribution
 plt.figure(figsize=(6,4))
 sns.histplot(df['monthly_charges'], kde=True)
 plt.title('Monthly Charges Distribution')
 plt.show()
+```
+
