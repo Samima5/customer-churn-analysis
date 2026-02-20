@@ -85,3 +85,34 @@ FROM customer_churn
 GROUP BY internet_service
 ORDER BY churned DESC;
 ```
+## 🐍 Python Analysis
+
+Below is the Python code used to analyze the customer churn dataset and visualize key insights.
+
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_csv('data/customer_churn.csv')
+df.head()
+
+# Churn Count
+plt.figure(figsize=(5,4))
+sns.countplot(data=df, x='churn')
+plt.title('Churn Distribution')
+plt.show()
+
+# Churn by Contract Type
+plt.figure(figsize=(6,4))
+sns.countplot(data=df, x='contract_type', hue='churn')
+plt.title('Churn by Contract Type')
+plt.xticks(rotation=45)
+plt.show()
+
+# Monthly Charges distribution
+plt.figure(figsize=(6,4))
+sns.histplot(df['monthly_charges'], kde=True)
+plt.title('Monthly Charges Distribution')
+plt.show()
